@@ -113,9 +113,8 @@ print(f"Provisioned network interface client {nic_result.name}")
 # Obtain the management object for virtual machines
 compute_client = ComputeManagementClient(credential, subscription_id)
 
-VM_NAME = "ExampleVM"
-USERNAME = "azureuser"
-PASSWORD = "ChangePa$$w0rd24"
+VM_NAME = "scray"
+USERNAME = "scray"
 
 print(f"Provisioning virtual machine {VM_NAME}; this operation might take a few minutes.")
 
@@ -137,9 +136,8 @@ poller = compute_client.virtual_machines.begin_create_or_update(RESOURCE_GROUP_N
             "vm_size": "Standard_DS1_v2"
         },
         "os_profile": {
-            "computer_name": VM_NAME,
-            "admin_username": USERNAME,
-            "admin_password": PASSWORD
+            "computer_name": scray,
+            "admin_username": scray,
         },
         "network_profile": {
             "network_interfaces": [{
